@@ -64,14 +64,30 @@
       object-fit: cover; /* asegura que la imagen cubra el contenedor */
     }
 
+    .header {
+      display: flex;
+      align-items: center; /* centra verticalmente la imagen y el texto */
+      justify-content: space-between; /* deja espacio entre el nombre y la imagen */
+      gap: 20px; /* opcional: separación extra */
+    }
+    
+    .header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+
+
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Gabriel Abril Giménez</h1>
-    <div class="oval-image">
-      <img src="fotocv.jpg" alt="Mi cara">
+    <div class="header">
+      <h1>Gabriel Abril Giménez</h1>
+      <div class="oval-image">
+        <img src="fotocv.jpg" alt="Mi cara">
+      </div>
     </div>
+
     <section>
       <h2>Contacto</h2>
       <ul>
