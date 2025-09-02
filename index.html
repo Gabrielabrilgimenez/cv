@@ -76,7 +76,16 @@
       margin: 0;
       font-size: 2em;
     }
+  /* Modelo 3D */
+    .model-3d {
+      text-align: center;
+      margin-top: 40px;
+    }
 
+    model-viewer {
+      width: 400px;
+      height: 400px;
+    }
 
   </style>
 </head>
@@ -104,12 +113,9 @@
 
     <section>
       <h2>Experiencia</h2>
-      <ul>
-        <li>
-          <p><strong>Prácticas en Desarrollo Web</strong> - IntroBay,Region de Murcia (2022) <a href="https://introbay.com">Introbay</a></p> 
-          Programador backend urilizando Drupal.
-        </li>
-      </ul>
+      <p><strong>Prácticas en Desarrollo Web</strong> - IntroBay,Region de Murcia (2022) <a href="https://introbay.com">Introbay</a></p> 
+      Programador backend urilizando Drupal.
+
     </section>
 
     <section>
@@ -131,6 +137,19 @@
         <li>Creacion de modelos 3D con blender, renderizado y animaciones</li>
       </ul>
     </section>
+
+      <!-- Sección con modelo 3D -->
+    <div class="model-3d">
+      <h2>Modelo 3D Interactivo</h2>
+      <model-viewer src="modelo.glb" alt="Modelo 3D"
+        auto-rotate
+        camera-controls
+        shadow-intensity="1"
+        style="background: #f0f0f0; border-radius: 10px;">
+      </model-viewer>
+      <p>Este es uno de mis modelos 3D creados en Blender, integrado en GitHub Pages.</p>
+    </div>
+    
   </div>
 </body>
 </html>
