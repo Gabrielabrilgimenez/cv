@@ -91,6 +91,27 @@
       width: 400px;
       height: 400px;
     }
+  
+    .grid-models {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+      gap: 20px; /* espacio entre modelos */
+      justify-items: center; /* centra los modelos en su celda */
+    }
+    
+    .grid-models model-viewer {
+      width: 100%;
+      max-width: 350px; /* límite para que no se deformen */
+      height: 350px;
+      background: #f0f0f0;
+      border-radius: 10px;
+    }
+    @media (max-width: 600px) {
+      .grid-models {
+        grid-template-columns: 1fr; /* solo una columna en móvil */
+      }
+    }
+        
   </style>
 </head>
 <body>
@@ -143,32 +164,21 @@
 
     <!-- Sección con modelo 3D LEGO -->
     <div class="model-3d">
-      <h2>Modelo 3D Interactivo</h2>
-      <model-viewer src="lego.glb" alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        shadow-intensity="1"
-        style="background: #f0f0f0; border-radius: 10px;">
-      </model-viewer>
-      <model-viewer src="salon_com.glb" alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        shadow-intensity="1"
-        style="background: #f0f0f0; border-radius: 10px;">
-      </model-viewer>
-      <model-viewer src="carcel.glb" alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        shadow-intensity="1"
-        style="background: #f0f0f0; border-radius: 10px;">
-      </model-viewer>
-            <model-viewer src="casa.glb" alt="Modelo 3D"
-        auto-rotate
-        camera-controls
-        shadow-intensity="1"
-        style="background: #f0f0f0; border-radius: 10px;">
-      </model-viewer>
-      <p>Este es uno de mis modelos 3D creados en Blender, integrado en GitHub Pages.</p>
+      <h2>Modelos 3D Interactivos</h2>
+      <div class="grid-models">
+        <model-viewer src="lego.glb" alt="Modelo 3D"
+          auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+    
+        <model-viewer src="salon_com.glb" alt="Modelo 3D"
+          auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+    
+        <model-viewer src="carcel.glb" alt="Modelo 3D"
+          auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+    
+        <model-viewer src="casa.glb" alt="Modelo 3D"
+          auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+      </div>
+      <p>Estos son algunos de mis modelos 3D creados en Blender, integrados en GitHub Pages.</p>
     </div>
   </div>
 </body>
