@@ -22,19 +22,19 @@
       animation: gradientBG 15s ease infinite;
       opacity: 0;
       animation: fadeIn 1.5s ease forwards, gradientBG 15s ease infinite;
+      scroll-behavior: smooth;
     }
-    
-    /* Animaciones */
+
     @keyframes gradientBG {
       0% {background-position: 0% 50%;}
       50% {background-position: 100% 50%;}
       100% {background-position: 0% 50%;}
     }
-    
+
     @keyframes fadeIn {
       to { opacity: 1; }
     }
-    
+
     /* ===========================
        CONTENEDOR PRINCIPAL
     =========================== */
@@ -47,7 +47,7 @@
       border-radius: 20px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.1);
     }
-    
+
     /* ===========================
        ENCABEZADOS
     =========================== */
@@ -57,12 +57,12 @@
       position: relative;
       display: inline-block;
     }
-    
+
     h1 {
       font-size: 2em;
       padding-bottom: 5px;
     }
-    
+
     h1::after, h2::after {
       content: "";
       position: absolute;
@@ -73,47 +73,72 @@
       background: #1a73e8;
       transition: width 0.4s ease;
     }
-    
+
     h1:hover::after, h2:hover::after {
       width: 100%;
     }
-    
+
+    /* ===========================
+       MENU DE NAVEGACION
+    =========================== */
+    .menu-cv {
+      margin-top: 15px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .menu-cv a {
+      text-decoration: none;
+      color: #1a73e8;
+      font-weight: 500;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .menu-cv a:hover {
+      background: #1a73e8;
+      color: white;
+    }
+
     /* ===========================
        SECCIONES Y LISTAS
     =========================== */
     section {
       margin-bottom: 30px;
     }
-    
+
     ul {
       list-style: disc;
       padding-left: 20px;
     }
-    
+
     li {
       margin-bottom: 8px;
     }
-    
+
     a {
       color: #1a73e8;
       text-decoration: none;
     }
-    
+
     a:hover {
       text-decoration: underline;
     }
-    
+
     /* ===========================
        HEADER
     =========================== */
     .header {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      gap: 10px;
       margin-bottom: 30px;
     }
-    
+
     .oval-image {
       width: 200px;
       height: 250px;
@@ -124,13 +149,13 @@
       align-items: center;
       border: 2px solid #333;
     }
-    
+
     .oval-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-    
+
     /* ===========================
        MODEL 3D GRID
     =========================== */
@@ -138,14 +163,14 @@
       text-align: center;
       margin-top: 40px;
     }
-    
+
     .grid-models {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
       justify-items: center;
     }
-    
+
     .grid-models model-viewer {
       width: 100%;
       max-width: 350px;
@@ -154,12 +179,12 @@
       border-radius: 10px;
       transition: transform 0.4s ease, box-shadow 0.4s ease;
     }
-    
+
     .grid-models model-viewer:hover {
       transform: scale(1.05);
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
-    
+
     /* ===========================
        RESPONSIVE (MÓVIL)
     =========================== */
@@ -167,25 +192,33 @@
       .grid-models {
         grid-template-columns: 1fr;
       }
-    
+
       .header {
-        flex-direction: column;
         align-items: center;
       }
     }
-
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
       <h1>Gabriel Abril Giménez</h1>
+
+      <!-- MENU -->
+      <nav class="menu-cv">
+        <a href="#perfil">Perfil</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#educacion">Educación</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#modelos3d">Modelos 3D</a>
+      </nav>
+
       <div class="oval-image">
         <img src="fotocv.jpg" alt="Mi cara">
       </div>
     </div>
 
-    <section>
+    <section id="contacto">
       <h2>Contacto</h2>
       <ul>
         <li>Email: <a href="mailto:gabrielabrilgimenez@gmail.com">gabrielabrilgimenez@gmail.com</a></li>
@@ -193,18 +226,18 @@
       </ul>
     </section>
 
-    <section>
+    <section id="perfil">
       <h2>Perfil</h2>
       <p>Estudiante de Ingeniería Multimedia y técnico en ASIR, apasionado por el desarrollo web y proyectos multimedia. Experiencia en HTML, CSS, JavaScript y administración de sistemas, combinando creatividad y habilidades técnicas para crear soluciones interactivas y funcionales.</p>
     </section>
 
-    <section>
+    <section id="experiencia">
       <h2>Experiencia</h2>
       <p><strong>Prácticas en Desarrollo Web</strong> - IntroBay, Región de Murcia (2022) <a href="https://introbay.com">Introbay</a></p> 
       Programador backend utilizando Drupal.
     </section>
 
-    <section>
+    <section id="educacion">
       <h2>Educación</h2>
       <ul>
         <li>Grado en Ingeniería Multimedia - Universidad de Alicante (2022-2026) - Actualmente 3er año</li>
@@ -212,7 +245,7 @@
       </ul>
     </section>
 
-    <section>
+    <section id="habilidades">
       <h2>Habilidades</h2>
       <ul>
         <li>HTML5, CSS, JavaScript, PHP, C#</li>
@@ -224,19 +257,19 @@
       </ul>
     </section>
 
-    <!-- Sección con modelo 3D LEGO -->
-    <div class="model-3d">
+    <!-- Sección con modelos 3D -->
+    <div class="model-3d" id="modelos3d">
       <h2>Modelos 3D Interactivos</h2>
       <div class="grid-models">
         <model-viewer src="lego.glb" alt="Modelo 3D"
           auto-rotate camera-controls shadow-intensity="1"></model-viewer>
-    
+
         <model-viewer src="salon_com.glb" alt="Modelo 3D"
           auto-rotate camera-controls shadow-intensity="1"></model-viewer>
-    
+
         <model-viewer src="carcel.glb" alt="Modelo 3D"
           auto-rotate camera-controls shadow-intensity="1"></model-viewer>
-    
+
         <model-viewer src="casa.glb" alt="Modelo 3D"
           auto-rotate camera-controls shadow-intensity="1"></model-viewer>
       </div>
