@@ -46,20 +46,24 @@
       font-size: 2.5em;
       margin-bottom: 10px;
     }
+    
     .oval-image {
-      width: 180px;
-      height: 220px;
-      border-radius: 50% / 40%;
+      width: 250px; /* Ajusta el ancho */
+      height: auto; /* Deja que la altura se ajuste automáticamente */
       overflow: hidden;
-      margin: 15px auto;
-      border: 3px solid #1a73e8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 2px solid #333;
+      border-radius: 10px; /* Esquinas ligeramente redondeadas, opcional */
     }
     
     .oval-image img {
-      width: auto;
-      height: 100%;
-      object-fit: cover;
+      width: 100%;
+      height: auto; /* Mantiene la proporción original */
+      object-fit: contain; /* No recorta, ajusta la imagen */
     }
+
     
     nav.menu-cv {
       display: flex;
