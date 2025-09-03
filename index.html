@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CV - Gabriel Abril</title>
 
-  <!-- Script necesario para <model-viewer> -->
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Script para modelos 3D -->
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
   <style>
-    /* ===========================
-       BODY Y FONDO
-    =========================== */
+    /* Fondo animado */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -20,191 +21,157 @@
       background: linear-gradient(-45deg, #1a73e8, #9c27b0, #ff5722, #ffc107);
       background-size: 400% 400%;
       animation: gradientBG 15s ease infinite;
-      opacity: 0;
-      animation: fadeIn 1.5s ease forwards, gradientBG 15s ease infinite;
       scroll-behavior: smooth;
     }
-
     @keyframes gradientBG {
       0% {background-position: 0% 50%;}
       50% {background-position: 100% 50%;}
       100% {background-position: 0% 50%;}
     }
 
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
-
-    /* ===========================
-       CONTENEDOR PRINCIPAL
-    =========================== */
+    /* Contenedor */
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 40px auto;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.8);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      padding: 30px;
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(8px);
+      border-radius: 16px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
 
-    /* ===========================
-       ENCABEZADOS
-    =========================== */
-    h1, h2 {
-      margin-bottom: 10px;
-      font-weight: 600;
-      position: relative;
-      display: inline-block;
-    }
-
-    h1 {
-      font-size: 2em;
-      padding-bottom: 5px;
-    }
-
-    h1::after, h2::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 3px;
-      left: 0;
-      bottom: -5px;
-      background: #1a73e8;
-      transition: width 0.4s ease;
-    }
-
-    h1:hover::after, h2:hover::after {
-      width: 100%;
-    }
-
-    /* ===========================
-       MENU DE NAVEGACION
-    =========================== */
-    .menu-cv {
-      margin-top: 15px;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .menu-cv a {
-      text-decoration: none;
-      color: #1a73e8;
-      font-weight: 500;
-      padding: 5px 10px;
-      border-radius: 5px;
-      transition: background 0.3s, color 0.3s;
-    }
-
-    .menu-cv a:hover {
-      background: #1a73e8;
-      color: white;
-    }
-
-    /* ===========================
-       SECCIONES Y LISTAS
-    =========================== */
-    section {
-      margin-bottom: 30px;
-    }
-
-    ul {
-      list-style: disc;
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
-    a {
-      color: #1a73e8;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* ===========================
-       HEADER
-    =========================== */
+    /* Header */
     .header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 30px;
+      text-align: center;
+      margin-bottom: 20px;
     }
-
+    .header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
     .oval-image {
-      width: 200px;
-      height: 250px;
-      overflow: hidden;
+      width: 180px;
+      height: 220px;
       border-radius: 50% / 40%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border: 2px solid #333;
+      overflow: hidden;
+      margin: 15px auto;
+      border: 3px solid #1a73e8;
     }
-
     .oval-image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    /* ===========================
-       MODEL 3D GRID
-    =========================== */
-    .model-3d {
-      text-align: center;
-      margin-top: 40px;
+    /* Navegación */
+    nav.menu-cv {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+    nav.menu-cv a {
+      text-decoration: none;
+      color: #1a73e8;
+      font-weight: bold;
+      padding: 8px 14px;
+      border: 2px solid #1a73e8;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    nav.menu-cv a:hover {
+      background: #1a73e8;
+      color: #fff;
     }
 
+    /* Secciones */
+    section {
+      margin-bottom: 30px;
+    }
+    h2 {
+      margin-bottom: 10px;
+      font-size: 1.5em;
+      color: #333;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* Botones de contacto */
+    .contact-links {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    .contact-links a {
+      font-size: 1.4em;
+      color: #333;
+      transition: color 0.3s;
+    }
+    .contact-links a:hover {
+      color: #1a73e8;
+    }
+
+    /* Modelos 3D */
     .grid-models {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      justify-items: center;
+      margin-top: 15px;
     }
-
-    .grid-models model-viewer {
+    model-viewer {
       width: 100%;
-      max-width: 350px;
-      height: 350px;
-      background: #f0f0f0;
+      height: 300px;
       border-radius: 10px;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      background: #f5f5f5;
+      transition: 0.3s;
+    }
+    model-viewer:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
 
-    .grid-models model-viewer:hover {
-      transform: scale(1.05);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    /* Proyectos */
+    .project-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 15px;
+    }
+    .project-card h3 {
+      margin: 0 0 8px;
+    }
+    .project-links a {
+      display: inline-block;
+      margin-right: 10px;
+      text-decoration: none;
+      color: #1a73e8;
+      font-weight: 500;
     }
 
-    /* ===========================
-       RESPONSIVE (MÓVIL)
-    =========================== */
+    /* Responsive */
     @media (max-width: 600px) {
-      .grid-models {
-        grid-template-columns: 1fr;
-      }
-
-      .header {
-        align-items: center;
+      .header h1 {
+        font-size: 1.8em;
       }
     }
   </style>
 </head>
 <body>
   <div class="container">
+    <!-- HEADER -->
     <div class="header">
       <h1>Gabriel Abril Giménez</h1>
-
-      <!-- MENU -->
+      <div class="oval-image">
+        <img src="fotocv.jpg" alt="Foto Gabriel Abril">
+      </div>
+      <!-- Menú -->
       <nav class="menu-cv">
         <a href="#perfil">Perfil</a>
         <a href="#experiencia">Experiencia</a>
@@ -213,78 +180,90 @@
         <a href="#modelos3d">Modelos 3D</a>
         <a href="#proyectos">Proyectos</a>
       </nav>
-
-      <div class="oval-image">
-        <img src="fotocv.jpg" alt="Mi cara">
-      </div>
     </div>
 
+    <!-- CONTACTO -->
     <section id="contacto">
       <h2>Contacto</h2>
       <ul>
         <li>Email: <a href="mailto:gabrielabrilgimenez@gmail.com">gabrielabrilgimenez@gmail.com</a></li>
         <li>Teléfono: +34 655 759 739</li>
       </ul>
+      <div class="contact-links">
+        <a href="https://github.com/gabrielabrilgimenez" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/gabriel-abril" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
     </section>
 
+    <!-- PERFIL -->
     <section id="perfil">
       <h2>Perfil</h2>
-      <p>Estudiante de Ingeniería Multimedia y técnico en ASIR, apasionado por el desarrollo web y proyectos multimedia. Experiencia en HTML, CSS, JavaScript y administración de sistemas, combinando creatividad y habilidades técnicas para crear soluciones interactivas y funcionales.</p>
+      <p>Ingeniero Multimedia con experiencia en desarrollo web, administración de sistemas y diseño 3D. Apasionado por crear soluciones innovadoras que combinan tecnología y diseño, desde aplicaciones interactivas hasta entornos 3D inmersivos.</p>
     </section>
 
+    <!-- EXPERIENCIA -->
     <section id="experiencia">
       <h2>Experiencia</h2>
-      <p><strong>Prácticas en Desarrollo Web</strong> - <a href="https://introbay.com">IntroBay</a>, Región de Murcia (2022) </p> 
-      Programador backend utilizando Drupal.
+      <p><strong>Prácticas en Desarrollo Web</strong> - <a href="https://introbay.com" target="_blank">IntroBay</a>, Región de Murcia (2022)</p>
+      <p>Programador backend utilizando Drupal, optimizando estructuras de contenido y mejorando el rendimiento de la plataforma.</p>
     </section>
 
+    <!-- EDUCACION -->
     <section id="educacion">
       <h2>Educación</h2>
       <ul>
-        <li>Grado en Ingeniería Multimedia - <a href="https://eps.ua.es/es/ingenieria-multimedia/#">Universidad de Alicante</a> (2022-2026) - Actualmente 3er año</li>
-        <li>Administrador de sistemas informáticos en red - <a href="https://www.iessanjuandelacruz.com/info/asir-informacion/">IES San Juan de la Cruz</a> (2020-2022)</li>
+        <li>Grado en Ingeniería Multimedia - <a href="https://eps.ua.es/es/ingenieria-multimedia/#" target="_blank">Universidad de Alicante</a> (2022-2026) - Actualmente en 3er año</li>
+        <li>Técnico en Administración de Sistemas Informáticos en Red - <a href="https://www.iessanjuandelacruz.com/info/asir-informacion/" target="_blank">IES San Juan de la Cruz</a> (2020-2022)</li>
       </ul>
     </section>
 
+    <!-- HABILIDADES -->
     <section id="habilidades">
       <h2>Habilidades</h2>
       <ul>
         <li>HTML5, CSS, JavaScript, PHP, C#</li>
-        <li>Node.js</li>
+        <li>Node.js, programación orientada a objetos (Java, C++)</li>
         <li>Diseño responsive y accesibilidad</li>
-        <li>Programación orientada a objetos: C++, Java</li>
         <li>Contenedores con Docker</li>
         <li>Creación de modelos 3D con Blender, renderizado y animaciones</li>
       </ul>
     </section>
 
-    <!-- Sección con modelos 3D -->
-    <div class="model-3d" id="modelos3d">
+    <!-- MODELOS 3D -->
+    <section id="modelos3d">
       <h2>Modelos 3D Interactivos</h2>
       <div class="grid-models">
-        <model-viewer src="lego.glb" alt="Modelo 3D"
-          auto-rotate camera-controls shadow-intensity="1"></model-viewer>
-
-        <model-viewer src="salon_com.glb" alt="Modelo 3D"
-          auto-rotate camera-controls shadow-intensity="1"></model-viewer>
-
-        <model-viewer src="carcel.glb" alt="Modelo 3D"
-          auto-rotate camera-controls shadow-intensity="1"></model-viewer>
-
-        <model-viewer src="casa.glb" alt="Modelo 3D"
-          auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+        <model-viewer src="lego.glb" alt="Modelo LEGO" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+        <model-viewer src="salon_com.glb" alt="Modelo Salón" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+        <model-viewer src="carcel.glb" alt="Modelo Cárcel" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
+        <model-viewer src="casa.glb" alt="Modelo Casa" auto-rotate camera-controls shadow-intensity="1"></model-viewer>
       </div>
-      <p>Estos son algunos de mis modelos 3D creados en Blender, integrados en GitHub Pages.</p>
-    </div>
+      <p>Modelos creados en Blender e integrados en la web con <code>&lt;model-viewer&gt;</code>.</p>
+    </section>
 
+    <!-- PROYECTOS -->
     <section id="proyectos">
       <h2>Proyectos</h2>
-      <p>Pong Game - prueba interactiva:</p>
-      <p>git clone https://gag26@bitbucket.org/gabrielabrilgimenez2003/pong.git </p>
-      <p>Contraseña de aplicación: ATBBeD2998JNADEFVtXZmHGfthf56AB65C15 </p>
+      <div class="project-card">
+        <h3>Juego Pong Multijugador</h3>
+        <p>Tecnologías: JavaScript, HTML5 Canvas, WebSockets.</p>
+        <p>Permite a dos jugadores conectarse y jugar en tiempo real desde navegadores diferentes.</p>
+        <div class="project-links">
+          <a href="#">Ver demo</a>
+          <a href="#">Repositorio GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <h3>Clon 1010 Color Match</h3>
+        <p>Tecnologías: HTML, CSS, JavaScript.</p>
+        <p>Juego puzzle tipo 1010 implementado desde cero, con drag and drop entre canvas y validación de posiciones.</p>
+        <div class="project-links">
+          <a href="#">Ver demo</a>
+          <a href="#">Repositorio GitHub</a>
+        </div>
+      </div>
     </section>
-    
-    
   </div>
 </body>
 </html>
