@@ -47,24 +47,22 @@
       margin-bottom: 10px;
     }
     
-    .oval-image {
-      width: 250px; /* Ajusta el ancho */
-      height: auto; /* Deja que la altura se ajuste automáticamente */
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    /* FOTO PERFIL RECTANGULAR, PEQUEÑA Y CENTRADA */
+    .profile-image {
+      width: 150px;      /* Tamaño más pequeño */
+      height: auto;      /* Mantiene proporción */
+      margin: 0 auto 15px; /* Centrado horizontal con margen inferior */
       border: 2px solid #333;
-      border-radius: 10px; /* Esquinas ligeramente redondeadas, opcional */
+      border-radius: 8px; /* Esquinas ligeramente redondeadas */
+      overflow: hidden;
+      display: block;
     }
-    
-    .oval-image img {
+    .profile-image img {
       width: 100%;
-      height: auto; /* Mantiene la proporción original */
-      object-fit: contain; /* No recorta, ajusta la imagen */
-    }
-
-    
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }     
     nav.menu-cv {
       display: flex;
       justify-content: center;
@@ -173,7 +171,7 @@
     <!-- HEADER -->
     <div class="header">
       <h1>Gabriel Abril Giménez</h1>
-      <div class="oval-image">
+      <div class="profile-image">
         <img src="fotocv.jpg" alt="Foto Gabriel Abril">
       </div>
       <nav class="menu-cv">
